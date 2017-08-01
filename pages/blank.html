@@ -27,6 +27,8 @@
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link href="../dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -407,7 +409,7 @@
 
                             <!-- parte central da pagina que contem os indicadores do chat e informações derais-->
                             <div class="col-md-8">
-                              <div class="panel panel-default">
+                             <div class="panel panel-default">
                                   <div class="panel-heading">
                                       <!--parte responsavel por selecionar o periodo -->
 
@@ -417,52 +419,43 @@
                                   </div>
                                   <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-sm-3">
-                                            <h4> Periodo de: <h4>
-                                        </div>
-
-                                        <div class="col-sm-3">
+                                       <form action="" class="form-horizontal"  role="form">
+                                          <fieldset>
                                             <div class="form-group">
-                                              <div class='input-group date' id='datetimepicker5'>
-                                                  <input type='text' class="form-control" />
-                                                  <span class="input-group-addon">
-                                                      <span class="glyphicon glyphicon-calendar"></span>
-                                                  </span>
-                                              </div>
+                                                  <label for="dtp_input1" class="col-md-3 control-label">Data:</label>
+                                                  <div class="input-group date form_date col-md-6" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                                      <input class="form-control" size="16" type="text" value="" readonly>
+                                                      <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                  </div>
+                                                  <input type="hidden" id="dtp_input1" value="" /><br/>
+                                                  <label for="dtp_input2" class="col-md-3 control-label">Até:</label>
+                                                  <div class="input-group date form_date col-md-6" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                                      <input class="form-control" size="16" type="text" value="" readonly>
+                                                      <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                  </div>
+                                                  <input type="hidden" id="dtp_input2" value="" /><br/>
                                             </div>
-                                        </div>
-
-                                        <div class="col-sm-3">
-                                            <h4> Até :<h4>
-                                        </div>
-
-                                        <div class="col-sm-3">
-                                            <div class="form-group">
-                                              <div class='input-group date' id='datetimepicker5'>
-                                                  <input type='text' class="form-control" />
-                                                  <span class="input-group-addon">
-                                                      <span class="glyphicon glyphicon-calendar"></span>
-                                                  </span>
-                                              </div>
-                                            </div>
-                                        </div>
-                                  </div>
-                                </div>
+                                          </fieldset>
+                                        </form>
+                                      </div>
+                                    </div>
 
                                 <div class="panel-footer">
                                 <!-- resto das informações centrais-->
+
                                       <br>
+                                      <h5>Atendimentos demandados:<h5>
+                                      <h5>Atendimentos Realizados:<h5>
+                                      <h5>Taxa de perda:<h5>
+                                      <h5>Fim até 15 minutos:<h5>
+                                      <h5>TMA:<h5>
+                                      <h5>Avancino:<h5>
+                                      <h5>Eficiência:<h5>
+                                      <h5>Questionário Interno:<h5>
                                       <br>
-                                      <h4>Atendimentos demandados:<h4>
-                                      <h4>Atendimentos Realizados:<h4>
-                                      <h4>Taxa de perda:<h4>
-                                      <h4>Fim até 15 minutos:<h4>
-                                      <h4>TMA:<h4>
-                                      <h4>Avancino:<h4>
-                                      <h4>Eficiência:<h4>
-                                      <h4>Questionário Interno:<h4>
-                                      <br>
-                                      <br>
+
                             <!-- parte responsavel pelos graficos-->
                               </div>
                             </div>
@@ -483,6 +476,7 @@
                 </div>
                 <!-- /.row -->
             </div>
+          </div>
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
@@ -502,6 +496,25 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+
+    <script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.pt-BR.js" charset="UTF-8"></script>
+
+    <script type="text/javascript">
+
+        	$('.form_date').datetimepicker({
+                language:  'pt-BR',
+                weekStart: 1,
+                todayBtn:  1,
+        		autoclose: 1,
+        		todayHighlight: 1,
+        		startView: 2,
+        		minView: 2,
+        		forceParse: 0
+            });
+
+      </script>
+-->
 </body>
 
 </html>
